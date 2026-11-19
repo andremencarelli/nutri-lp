@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nutricionista Mariana Leão. Emagreça com leveza, conquiste sua melhor estética e faça as pazes com a comida através de acompanhamento nutricional 100% online.">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <title>Mariana Leão | Nutrição Clínica & Estética Online</title>
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF8F5',
+            sand: '#F0EAE1',
+            sage: '#5C7263',
+            'sage-dark': '#435549',
+            terracotta: '#B87A56',
+            charcoal: '#2C2E2C',
+            muted: '#636663',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'organic': '0 20px 40px -15px rgba(92, 114, 99, 0.08)',
+            'organic-lg': '0 28px 56px -16px rgba(44, 46, 44, 0.1)',
+            'floating': '0 15px 35px -5px rgba(44, 46, 44, 0.08), 0 5px 15px rgba(0, 0, 0, 0.03)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-cream text-charcoal font-sans antialiased selection:bg-sand selection:text-sage-dark min-h-screen flex flex-col">
+
+  <!-- ========================================================================
+       DISCLAIMER DE DEMONSTRAÇÃO
+       ======================================================================== -->
+  <div class="bg-charcoal text-cream text-xs py-2 px-4 text-center font-medium tracking-wide border-b border-charcoal/30">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block px-2 py-0.5 rounded bg-terracotta text-white text-[10px] uppercase font-bold tracking-wider">Aviso</span>
+      <span>Esta página é apenas uma demonstração.</span>
+    </div>
+  </div>
+
+  <!-- Top Announcement / Mini Bar -->
+  <aside class="bg-sand/70 text-charcoal text-xs py-2 px-4 border-b border-sand text-center font-medium tracking-wide">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage"></span>
+      <span>Vagas abertas para consultas deste mês • Atendimento individualizado em todo o Brasil e exterior</span>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       1. NAVBAR MINIMALISTA (Sticky com Blur Suave)
+       ======================================================================== -->
+  <header id="site-header" class="sticky top-0 z-50 bg-cream/80 backdrop-blur-md border-b border-sand/70 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logotipo em Texto Estilizado -->
+      <a href="#" class="group flex items-baseline gap-2 transition-opacity hover:opacity-90">
+        <span class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-charcoal">
+          Mariana Leão
+        </span>
+        <span class="text-xs uppercase tracking-[0.2em] font-medium text-sage-dark hidden sm:inline-block">
+          | Nutrição
+        </span>
+      </a>
+
+      <!-- Links Âncora (Desktop) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted" aria-label="Navegação Principal">
+        <a href="#sobre" class="transition-colors hover:text-charcoal hover:underline underline-offset-8 decoration-sand decoration-2">Sobre</a>
+        <a href="#como-funciona" class="transition-colors hover:text-charcoal hover:underline underline-offset-8 decoration-sand decoration-2">Como Funciona</a>
+        <a href="#planos" class="transition-colors hover:text-charcoal hover:underline underline-offset-8 decoration-sand decoration-2">Planos</a>
+        <a href="#duvidas" class="transition-colors hover:text-charcoal hover:underline underline-offset-8 decoration-sand decoration-2">Dúvidas</a>
+      </nav>
+
+      <!-- CTA Discreto no Header & Botão Mobile -->
+      <div class="flex items-center gap-3">
+        <a 
+          href="#" 
+          data-wa-trigger 
+          class="hidden sm:inline-flex items-center gap-2 bg-sage hover:bg-sage-dark text-white text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5 active:translate-y-0"
+        >
+          <span>Agendar Consulta</span>
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <!-- Botão Menu Mobile Hamburger -->
+        <button 
+          id="mobile-menu-toggle"
+          type="button" 
+          class="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-charcoal hover:text-sage hover:bg-sand/60 focus:outline-none focus:ring-2 focus:ring-sage"
+          aria-expanded="false" 
+          aria-label="Abrir Menu Principal"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Gaveta Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-sand bg-cream/95 backdrop-blur-lg px-4 pt-3 pb-6">
+      <nav class="flex flex-col gap-4 text-base font-medium text-charcoal">
+        <a href="#sobre" class="mobile-nav-link py-2 border-b border-sand/50 hover:text-sage">Sobre</a>
+        <a href="#como-funciona" class="mobile-nav-link py-2 border-b border-sand/50 hover:text-sage">Como Funciona</a>
+        <a href="#planos" class="mobile-nav-link py-2 border-b border-sand/50 hover:text-sage">Planos</a>
+        <a href="#duvidas" class="mobile-nav-link py-2 border-b border-sand/50 hover:text-sage">Dúvidas</a>
+        <div class="pt-2">
+          <a 
+            href="#" 
+            data-wa-trigger 
+            class="mobile-nav-link w-full text-center inline-block bg-sage hover:bg-sage-dark text-white font-medium py-3 rounded-xl transition-colors shadow-sm"
+          >
+            Agendar Consulta
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. CONTEÚDO PRINCIPAL / SEÇÃO HERO (Acima da Dobra)
+       ======================================================================== -->
+  <main class="flex-grow">
+    
+    <section class="relative pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
+      <!-- Elementos Decorativos Suaves no Fundo -->
+      <div class="pointer-events-none absolute -top-24 right-0 w-96 h-96 rounded-full bg-sand/60 blur-3xl opacity-70 -z-10" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute top-1/2 left-0 w-80 h-80 rounded-full bg-sand/40 blur-3xl opacity-50 -z-10" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Coluna da Esquerda (Copywriting de Alta Conversão / CRO) -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            
+            <!-- Badge / Selo de Posicionamento -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sand/80 border border-sand text-terracotta text-xs sm:text-sm font-medium mb-6 transition-all hover:bg-sand">
+              <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse" aria-hidden="true"></span>
+              <span>Atendimento 100% Online • Emagrecimento & Estética</span>
+            </div>
+
+            <!-- Headline Editorial Principal -->
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-semibold text-charcoal leading-[1.12] tracking-tight mb-6">
+              Emagreça com leveza, conquiste sua 
+              <span class="italic font-normal text-sage underline decoration-sand/90 decoration-wavy decoration-1 underline-offset-4">
+                melhor estética
+              </span> 
+              e faça as pazes com a comida.
+            </h1>
+
+            <!-- Subheadline Persuasiva -->
+            <p class="text-muted text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl mb-8">
+              Acompanhamento nutricional individualizado para transformar seu corpo e sua saúde sem dietas restritivas ou terrorismo alimentar — de onde você estiver.
+            </p>
+
+            <!-- Ação Principal (CTA Primário) + Microcopy -->
+            <div class="w-full sm:w-auto flex flex-col items-start gap-3">
+              <a 
+                href="#"
+                data-wa-trigger
+                class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-sage hover:bg-sage-dark text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-organic hover:shadow-organic-lg hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <!-- Ícone WhatsApp em SVG -->
+                <svg class="w-5 h-5 fill-current text-white transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.741.963 1.199.662.589 1.22.771 1.393.858.173.086.274.072.375-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.044.073.044.42-.1 0.825zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.399C8.384 21.492 10.133 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                </svg>
+                <span>Quero agendar minha consulta</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+
+              <!-- Microcopy de Segurança & Redução de Atrito -->
+              <div class="flex items-center gap-2 text-xs sm:text-sm text-muted">
+                <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>Resposta rápida via WhatsApp • Atendimento personalizado</span>
+              </div>
+            </div>
+
+            <!-- Mini Prova Social / Credenciais -->
+            <div class="mt-10 pt-8 border-t border-sand/80 w-full flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-muted">
+              <div>
+                <span class="block font-semibold text-charcoal text-base font-serif" data-config="crn">CRN-X 00000</span>
+                <span>Registro Profissional Ativo</span>
+              </div>
+              <div class="h-8 w-px bg-sand hidden sm:block"></div>
+              <div>
+                <span class="block font-semibold text-charcoal text-base font-serif">100% Individualizado</span>
+                <span>Sem dietas de gaveta</span>
+              </div>
+              <div class="h-8 w-px bg-sand hidden sm:block"></div>
+              <div>
+                <span class="block font-semibold text-charcoal text-base font-serif">Suporte Contínuo</span>
+                <span>Direto com a nutricionista</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Coluna da Direita (Moldura Orgânica & Card Flutuante) -->
+          <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+            
+            <div class="relative w-full max-w-md lg:max-w-none">
+              
+              <!-- Moldura Orgânica com Borda Assimétrica -->
+              <div class="organic-frame relative z-10 border-4 border-white shadow-organic-lg bg-sand">
+                <img 
+                  src="https://placehold.co/600x720/F0EAE1/5C7263?text=Foto+Mariana+Leao" 
+                  alt="Nutricionista Mariana Leão sorrindo em seu ambiente de atendimento" 
+                  class="w-full h-auto object-cover aspect-[4/5] block"
+                  width="600"
+                  height="720"
+                  loading="eager"
+                >
+                <!-- Gradiente de acabamento sutil na base da imagem -->
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Card Flutuante Sutil (Diferencial de Alto Valor em CRO) -->
+              <div class="animate-float glass-card absolute -bottom-6 -left-4 sm:-left-8 z-20 rounded-2xl p-4 sm:p-5 border border-white/70 shadow-floating max-w-[280px] sm:max-w-[320px]">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center flex-shrink-0">
+                    <!-- Ícone de Check / Clipboard -->
+                    <svg class="w-5 h-5 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-sm font-semibold text-charcoal leading-snug">
+                      Plano alimentar entregue na consulta
+                    </h3>
+                    <p class="text-xs text-muted mt-1 leading-normal">
+                      Construído a quatro mãos, adaptado à sua rotina real e sem esperas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Badge Flutuante Secundário (Selo de Qualidade) -->
+              <div class="hidden sm:flex absolute -top-4 -right-4 z-20 items-center gap-2 bg-white/90 backdrop-blur-md border border-sand px-3.5 py-2 rounded-full shadow-sm text-xs text-charcoal font-medium">
+                <span class="w-2 h-2 rounded-full bg-sage"></span>
+                <span>Atendimento Humanizado</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2. SEÇÃO IDENTIFICAÇÃO ("Para quem é esse acompanhamento")
+         ======================================================================== -->
+    <section class="bg-sand/40 border-y border-sand/70 py-20 lg:py-28 relative overflow-hidden">
+      <!-- Fundo decorativo sutil -->
+      <div class="pointer-events-none absolute -bottom-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/40 blur-3xl rounded-full -z-10" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream border border-sand text-terracotta text-xs sm:text-sm font-medium uppercase tracking-wider mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+            <span>Pilares do Acompanhamento</span>
+          </div>
+          
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.18] tracking-tight mb-6">
+            Você não precisa viver em guerra com a balança para ver 
+            <span class="italic font-normal text-sage">resultados no espelho</span>.
+          </h2>
+
+          <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Meu método foi desenhado para quem busca transformações corporais reais sem abrir mão da vida social, do prazer à mesa e da saúde mental.
+          </p>
+        </div>
+
+        <!-- Grid de 4 Cards de Identificação -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          
+          <!-- Card 1: Emagrecimento Sustentável -->
+          <div class="group bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+            <div>
+              <!-- Ícone Traço Fino (Balança / Equilíbrio) -->
+              <div class="w-14 h-14 rounded-2xl bg-sand/60 group-hover:bg-sage/10 text-sage flex items-center justify-center mb-6 transition-colors duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-7-5l7-3 7 3M4 10l3-5 3 5m4 0l3-5 3 5m-14 0h8m2 0h8M3 10a4 4 0 008 0M13 10a4 4 0 008 0"/>
+                </svg>
+              </div>
+
+              <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal mb-3 group-hover:text-sage transition-colors">
+                Emagrecimento Sustentável
+              </h3>
+
+              <p class="text-muted text-sm leading-relaxed">
+                Redução de gordura corporal sem efeito sanfona, preservando sua massa muscular e acelerando o metabolismo com constância.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-sand/50 flex items-center gap-2 text-xs font-medium text-sage">
+              <span>Sem restrições severas</span>
+              <span class="text-muted">•</span>
+              <span>Resultados duradouros</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Estética e Autoestima -->
+          <div class="group bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+            <div>
+              <!-- Ícone Traço Fino (Brilho / Estética) -->
+              <div class="w-14 h-14 rounded-2xl bg-sand/60 group-hover:bg-sage/10 text-sage flex items-center justify-center mb-6 transition-colors duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/>
+                </svg>
+              </div>
+
+              <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal mb-3 group-hover:text-sage transition-colors">
+                Estética e Autoestima
+              </h3>
+
+              <p class="text-muted text-sm leading-relaxed">
+                Estratégias nutricionais voltadas para definição corporal, redução de retenção hídrica, celulite e saúde viçosa da pele e cabelos.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-sand/50 flex items-center gap-2 text-xs font-medium text-sage">
+              <span>Menos inchaço</span>
+              <span class="text-muted">•</span>
+              <span>Mais definição</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Reeducação Alimentar -->
+          <div class="group bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+            <div>
+              <!-- Ícone Traço Fino (Alimentação Consciente / Prato & Folha) -->
+              <div class="w-14 h-14 rounded-2xl bg-sand/60 group-hover:bg-sage/10 text-sage flex items-center justify-center mb-6 transition-colors duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253"/>
+                </svg>
+              </div>
+
+              <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal mb-3 group-hover:text-sage transition-colors">
+                Reeducação Alimentar
+              </h3>
+
+              <p class="text-muted text-sm leading-relaxed">
+                Aprenda a comer o que gosta com equilíbrio, sem culpa ou proibições descabidas — inclusive em finais de semana e eventos sociais.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-sand/50 flex items-center gap-2 text-xs font-medium text-sage">
+              <span>Autonomia alimentar</span>
+              <span class="text-muted">•</span>
+              <span>Sem culpa</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Qualidade de Vida -->
+          <div class="group bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+            <div>
+              <!-- Ícone Traço Fino (Sol / Energia Vital) -->
+              <div class="w-14 h-14 rounded-2xl bg-sand/60 group-hover:bg-sage/10 text-sage flex items-center justify-center mb-6 transition-colors duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                </svg>
+              </div>
+
+              <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal mb-3 group-hover:text-sage transition-colors">
+                Qualidade de Vida
+              </h3>
+
+              <p class="text-muted text-sm leading-relaxed">
+                Mais energia, disposição diária, melhora da função intestinal, qualidade do sono e uma relação serena e acolhedora com seu corpo.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-sand/50 flex items-center gap-2 text-xs font-medium text-sage">
+              <span>Mais disposição</span>
+              <span class="text-muted">•</span>
+              <span>Intestino regular</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. SEÇÃO COMO FUNCIONA ("Como funciona o atendimento online")
+         ======================================================================== -->
+    <section id="como-funciona" class="bg-cream py-20 lg:py-28 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/80 border border-sand text-sage-dark text-xs sm:text-sm font-medium uppercase tracking-wider mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+            <span>Experiência 100% Online</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.18] tracking-tight mb-6">
+            Como funciona o <span class="italic font-normal text-sage">atendimento online</span>
+          </h2>
+
+          <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Uma consulta próxima, minuciosa e tão humana quanto a presencial, com o conforto de ser atendida de onde você estiver.
+          </p>
+        </div>
+
+        <!-- 3 Passos Simples com Visual Sequencial -->
+        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          
+          <!-- Linha Conectora Decorativa (Visível em Desktop) -->
+          <div class="hidden md:block absolute top-1/2 left-[16%] right-[16%] h-px border-t border-dashed border-sand -translate-y-12 -z-0" aria-hidden="true"></div>
+
+          <!-- Passo 01 -->
+          <div class="relative z-10 bg-sand/35 hover:bg-sand/60 p-8 sm:p-9 rounded-3xl border border-sand/80 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-4xl sm:text-5xl font-bold text-terracotta/40 group-hover:text-terracotta/70 transition-colors">
+                  01
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-xs font-semibold text-charcoal border border-sand shadow-2xs">
+                  Etapa Inicial
+                </span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-semibold text-charcoal mb-4 group-hover:text-sage transition-colors">
+                Pré-consulta & Escuta Ativa
+              </h3>
+
+              <p class="text-muted text-sm sm:text-base leading-relaxed">
+                Antes mesmo do nosso encontro, você preenche um questionário detalhado sobre sua rotina, exames recentes, preferências alimentares, horários e objetivos específicos.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-sand/60 text-xs font-medium text-sage flex items-center gap-2">
+              <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Mapeamento prévio completo</span>
+            </div>
+          </div>
+
+          <!-- Passo 02 -->
+          <div class="relative z-10 bg-sand/35 hover:bg-sand/60 p-8 sm:p-9 rounded-3xl border border-sand/80 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-4xl sm:text-5xl font-bold text-sage/40 group-hover:text-sage/70 transition-colors">
+                  02
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-xs font-semibold text-charcoal border border-sand shadow-2xs">
+                  Ao Vivo
+                </span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-semibold text-charcoal mb-4 group-hover:text-sage transition-colors">
+                Consulta Online Individual
+              </h3>
+
+              <p class="text-muted text-sm sm:text-base leading-relaxed">
+                Encontro por videochamada sem pressa (de 60 a 90 minutos), onde avaliamos sua rotina em profundidade, ajustamos hábitos e montamos juntas a sua estratégia sob medida.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-sand/60 text-xs font-medium text-sage flex items-center gap-2">
+              <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Videochamada humanizada e sem pressa</span>
+            </div>
+          </div>
+
+          <!-- Passo 03 -->
+          <div class="relative z-10 bg-sand/35 hover:bg-sand/60 p-8 sm:p-9 rounded-3xl border border-sand/80 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="font-serif text-4xl sm:text-5xl font-bold text-terracotta/40 group-hover:text-terracotta/70 transition-colors">
+                  03
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-xs font-semibold text-charcoal border border-sand shadow-2xs">
+                  Sem Espera
+                </span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-semibold text-charcoal mb-4 group-hover:text-sage transition-colors">
+                Plano na Hora & Acompanhamento
+              </h3>
+
+              <p class="text-muted text-sm sm:text-base leading-relaxed">
+                Você sai da consulta com seu plano alimentar pronto no aplicativo/PDF e conta com suporte próximo via WhatsApp para tirar dúvidas e não desistir no meio do caminho.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-sand/60 text-xs font-medium text-sage flex items-center gap-2">
+              <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Suporte contínuo via WhatsApp</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner de Conversão Rápida / Redução de Ansiedade -->
+        <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-sand/50 border border-sand flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-center sm:text-left">
+            <h4 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal">
+              Quer saber como seria o plano para a sua rotina?
+            </h4>
+            <p class="text-xs sm:text-sm text-muted mt-1">
+              Envie uma mensagem e tire suas dúvidas diretamente antes de agendar.
+            </p>
+          </div>
+          <a 
+            href="#"
+            data-wa-trigger
+            data-wa-message="Olá Mariana! Vi como funciona a consulta online e gostaria de tirar uma dúvida sobre meu caso."
+            class="inline-flex items-center gap-2.5 bg-sage hover:bg-sage-dark text-white text-sm font-semibold px-6 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5 flex-shrink-0"
+          >
+            <span>Conversar no WhatsApp</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. SEÇÃO SOBRE MARIANA LEÃO ("Autoridade e Humanização")
+         ======================================================================== -->
+    <section id="sobre" class="bg-sand/35 border-t border-sand/70 py-20 lg:py-28 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          
+          <!-- Coluna Visual da Foto (Esquerda) -->
+          <div class="lg:col-span-5 relative flex justify-center">
+            <div class="relative w-full max-w-md lg:max-w-none">
+              
+              <!-- Moldura Orgânica Alternativa -->
+              <div class="organic-frame-alt relative z-10 border-4 border-white shadow-organic-lg bg-sand">
+                <img 
+                  src="https://placehold.co/540x640/FAF8F5/5C7263?text=Mariana+Leao+Consultorio" 
+                  alt="Nutricionista Mariana Leão em seu espaço acolhedor de atendimento" 
+                  class="w-full h-auto object-cover aspect-[4/5] block"
+                  width="540"
+                  height="640"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Badge Flutuante de Autoridade -->
+              <div class="glass-card absolute -bottom-5 -right-3 sm:-right-6 z-20 rounded-2xl p-4 sm:p-5 border border-white/80 shadow-floating max-w-[260px]">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-terracotta/15 text-terracotta flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block text-xs uppercase tracking-wider text-muted font-semibold">Abordagem</span>
+                    <span class="text-sm font-serif font-bold text-charcoal">Ciência & Comportamento</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Coluna Textual Humanizada (Direita) -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream border border-sand text-terracotta text-xs sm:text-sm font-medium uppercase tracking-wider mb-5">
+              <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+              <span>Conheça a sua Nutricionista</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.16] tracking-tight mb-6">
+              Nutrição com empatia, embasamento científico e olhar para a sua 
+              <span class="italic font-normal text-sage">individualidade</span>.
+            </h2>
+
+            <!-- Identificação Profissional & CRN -->
+            <div class="flex items-center gap-3 mb-6">
+              <span class="font-serif text-xl sm:text-2xl font-semibold text-charcoal">Mariana Leão</span>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-white border border-sand text-xs font-semibold text-muted font-sans" data-config="crn">
+                CRN-X 00000
+              </span>
+            </div>
+
+            <!-- Filosofia Narrativa -->
+            <div class="space-y-4 text-muted text-base sm:text-lg leading-relaxed mb-8">
+              <p>
+                Acredito genuinamente que cuidar do corpo não precisa ser um fardo, nem um ciclo eterno de restrições e frustrações. Minha missão é traduzir a ciência da nutrição em soluções práticas e acolhedoras para a sua rotina real.
+              </p>
+              <p>
+                Unindo <strong class="text-charcoal font-semibold">ciência nutricional</strong>, <strong class="text-charcoal font-semibold">estética corporal</strong> e <strong class="text-charcoal font-semibold">comportamento alimentar</strong>, investigo muito além das calorias: olho para seu sono, nível de estresse, perfil hormonal e momentos de lazer para desenhar um plano que você consiga sustentar a longo prazo.
+              </p>
+            </div>
+
+            <!-- Destaques em Bullets Humanizados -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full mb-9">
+              <div class="flex items-center gap-2.5 text-sm text-charcoal font-medium">
+                <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 text-xs font-bold">✓</span>
+                <span>Conduta 100% baseada em evidências</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-sm text-charcoal font-medium">
+                <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 text-xs font-bold">✓</span>
+                <span>Respeito à sua vida social e preferências</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-sm text-charcoal font-medium">
+                <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 text-xs font-bold">✓</span>
+                <span>Plano alimentar entregue no próprio encontro</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-sm text-charcoal font-medium">
+                <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 text-xs font-bold">✓</span>
+                <span>Canal direto no WhatsApp para dúvidas</span>
+              </div>
+            </div>
+
+            <!-- Botões de Ação (Agendamento + Instagram Secundário) -->
+            <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+              <!-- Botão Principal de Agendamento -->
+              <a 
+                href="#"
+                data-wa-trigger
+                data-wa-message="Olá Mariana! Li sobre sua trajetória e abordagem e gostaria de iniciar meu acompanhamento."
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-sage hover:bg-sage-dark text-white text-sm sm:text-base font-semibold px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5"
+              >
+                <span>Agendar Consulta</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+
+              <!-- Botão Secundário para Instagram -->
+              <a 
+                href="https://instagram.com/marianaleao.nutri"
+                data-config="instagram"
+                data-keep-text="true"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-sand/60 text-charcoal text-sm sm:text-base font-medium px-6 py-3.5 rounded-full border border-sand transition-all duration-300 shadow-2xs hover:-translate-y-0.5"
+              >
+                <!-- Ícone do Instagram em SVG -->
+                <svg class="w-4 h-4 text-terracotta" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span>Acompanhe no Instagram</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. SEÇÃO PLANOS DE ACOMPANHAMENTO ("Planos Personalizados")
+         ======================================================================== -->
+    <section id="planos" class="bg-cream py-20 lg:py-28 relative overflow-hidden border-t border-sand/70">
+      <!-- Elementos Decorativos Suaves no Fundo -->
+      <div class="pointer-events-none absolute -top-32 right-1/4 w-[500px] h-[500px] rounded-full bg-sand/50 blur-3xl opacity-60 -z-10" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -bottom-32 left-1/4 w-[500px] h-[500px] rounded-full bg-sand/40 blur-3xl opacity-50 -z-10" aria-hidden="true"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/80 border border-sand text-terracotta text-xs sm:text-sm font-medium uppercase tracking-wider mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+            <span>Acompanhamento Personalizado</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.18] tracking-tight mb-6">
+            Escolha o formato ideal para o seu <span class="italic font-normal text-sage">momento de vida</span>
+          </h2>
+
+          <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Metodologias desenhadas para respeitar sua individualidade. Sem dietas genéricas, com suporte contínuo e acolhimento para sua evolução real.
+          </p>
+        </div>
+
+        <!-- Grid de 3 Colunas com Items-Stretch (Card Central Elevado) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4 lg:pt-6">
+          
+          <!-- ==========================================
+               CARD 1: PLANO DESPERTAR
+               ========================================== -->
+          <div class="group bg-white/90 hover:bg-white p-8 sm:p-9 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <!-- Cabeçalho do Card -->
+              <div class="mb-6">
+                <span class="inline-block text-xs uppercase tracking-widest font-semibold text-sage mb-2">
+                  Início Estruturado
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal">
+                  Plano Despertar
+                </h3>
+                <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+                  O primeiro passo para organizar sua rotina
+                </p>
+              </div>
+
+              <div class="h-px bg-sand/70 w-full mb-6"></div>
+
+              <!-- Lista de Benefícios -->
+              <ul class="space-y-4 mb-8 text-sm text-charcoal leading-relaxed" role="list">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>Consulta online inicial completa</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>1 mês de acompanhamento</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>Plano Alimentar individualizado entregue na hora</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Botão de Ação -->
+            <div class="pt-4 border-t border-sand/50">
+              <a 
+                href="#"
+                data-plan="Despertar"
+                class="w-full inline-flex items-center justify-center gap-2 bg-sand/60 hover:bg-sand text-charcoal hover:text-sage-dark text-sm sm:text-base font-semibold py-3.5 px-6 rounded-full border border-sand transition-all duration-300 shadow-2xs hover:-translate-y-0.5 active:translate-y-0 text-center"
+              >
+                <span>Quero saber mais sobre o Despertar</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ==========================================
+               CARD 2: PLANO TRANSFORMAR (MAIS ESCOLHIDO)
+               ========================================== -->
+          <div class="relative bg-white p-8 sm:p-9 rounded-3xl border-2 border-terracotta shadow-organic-lg lg:scale-105 z-20 flex flex-col justify-between transition-all duration-300 my-4 lg:my-0">
+            
+            <!-- Selo de Destaque "MAIS ESCOLHIDO" -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-terracotta text-white text-[11px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              <span>MAIS ESCOLHIDO</span>
+            </div>
+
+            <div>
+              <!-- Cabeçalho do Card -->
+              <div class="mb-6 pt-2">
+                <span class="inline-block text-xs uppercase tracking-widest font-semibold text-terracotta mb-2">
+                  Foco & Consistência
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal">
+                  Plano Transformar
+                </h3>
+                <p class="text-xs sm:text-sm text-terracotta font-medium mt-2 leading-relaxed">
+                  Consistência para resultados visíveis
+                </p>
+              </div>
+
+              <div class="h-px bg-sand w-full mb-6"></div>
+
+              <!-- Lista de Benefícios -->
+              <ul class="space-y-4 mb-8 text-sm text-charcoal leading-relaxed" role="list">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/20 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>Consulta online completa</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/20 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>3 meses</strong> de acompanhamento contínuo</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/20 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>Suporte direto no WhatsApp</strong> para dúvidas e ajustes</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/20 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>Plano Alimentar entregue na hora</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-terracotta/20 text-terracotta flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>E-book base exclusivo</strong> de receitas e substituições</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Botão de Ação Destaque Primário -->
+            <div class="pt-4 border-t border-sand">
+              <a 
+                href="#"
+                data-plan="Transformar"
+                class="w-full inline-flex items-center justify-center gap-2 bg-sage hover:bg-sage-dark text-white text-sm sm:text-base font-semibold py-4 px-6 rounded-full transition-all duration-300 shadow-organic hover:shadow-organic-lg hover:-translate-y-0.5 active:translate-y-0 text-center"
+              >
+                <span>Escolher Plano Transformar</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ==========================================
+               CARD 3: PLANO FLORESCER
+               ========================================== -->
+          <div class="group bg-white/90 hover:bg-white p-8 sm:p-9 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <!-- Cabeçalho do Card -->
+              <div class="mb-6">
+                <span class="inline-block text-xs uppercase tracking-widest font-semibold text-sage mb-2">
+                  Evolução Integral
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal">
+                  Plano Florescer
+                </h3>
+                <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+                  Transformação profunda e mudança de estilo de vida
+                </p>
+              </div>
+
+              <div class="h-px bg-sand/70 w-full mb-6"></div>
+
+              <!-- Lista de Benefícios -->
+              <ul class="space-y-4 mb-8 text-sm text-charcoal leading-relaxed" role="list">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>6 meses</strong> de acompanhamento completo</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>Até 6 consultas online</strong></span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>Até 4 ajustes</strong> estratégicos no plano alimentar</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>Acompanhamento próximo no WhatsApp</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-terracotta/15 text-terracotta flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span><strong>Brinde exclusivo</strong> da nutri</span>
+                </li>
+
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-sage/15 text-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>Participação garantida no <strong>próximo grupo de acompanhamento</strong></span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Botão de Ação -->
+            <div class="pt-4 border-t border-sand/50">
+              <a 
+                href="#"
+                data-plan="Florescer"
+                class="w-full inline-flex items-center justify-center gap-2 bg-sand/60 hover:bg-sand text-charcoal hover:text-sage-dark text-sm sm:text-base font-semibold py-3.5 px-6 rounded-full border border-sand transition-all duration-300 shadow-2xs hover:-translate-y-0.5 active:translate-y-0 text-center"
+              >
+                <span>Quero saber mais sobre o Florescer</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Microcopy de Segurança & Confiança -->
+        <div class="mt-16 max-w-2xl mx-auto text-center flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-muted">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            <span>Condições facilitadas no Pix e Cartão</span>
+          </div>
+          <span class="hidden sm:inline text-sand">•</span>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <span>Atendimento ético e em conformidade com o CFN</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. SEÇÃO DE DEPOIMENTOS (Prova Social Ética em Conformidade com o CFN)
+         ======================================================================== -->
+    <section class="bg-sand/35 border-t border-sand/70 py-20 lg:py-28 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream border border-sand text-terracotta text-xs sm:text-sm font-medium uppercase tracking-wider mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+            <span>Experiências Reais</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.18] tracking-tight mb-6">
+            Histórias reais de quem transformou a <span class="italic font-normal text-sage">relação com a comida</span>
+          </h2>
+
+          <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Resultados construídos com leveza, constância e acolhimento — sem dietas restritivas e sem culpa à mesa.
+          </p>
+        </div>
+
+        <!-- Grid de 3 Cards de Depoimentos em Texto -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Depoimento 1 -->
+          <div class="bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <!-- 5 Estrelas em Tom Terracotta -->
+              <div class="flex items-center gap-1 text-terracotta mb-6" aria-label="Avaliação 5 estrelas">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+
+              <!-- Texto do Depoimento -->
+              <p class="text-charcoal/90 text-sm sm:text-base leading-relaxed italic mb-6">
+                “Eu acreditava que emagrecer significava passar fome e cortar o que gosto. Com a Mariana, meu plano tem comida de verdade, rotina fácil de seguir e zero terrorismo. Eliminei 7kg com muita disposição no trabalho e exames excelentes!”
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-sand/60 flex items-center justify-between text-xs">
+              <span class="font-serif text-base font-semibold text-charcoal">Camila R.</span>
+              <span class="text-muted font-medium bg-sand/50 px-2.5 py-1 rounded-full">Plano Transformar</span>
+            </div>
+          </div>
+
+          <!-- Depoimento 2 -->
+          <div class="bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <!-- 5 Estrelas em Tom Terracotta -->
+              <div class="flex items-center gap-1 text-terracotta mb-6" aria-label="Avaliação 5 estrelas">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+
+              <!-- Texto do Depoimento -->
+              <p class="text-charcoal/90 text-sm sm:text-base leading-relaxed italic mb-6">
+                “A consulta online foi uma surpresa incrível. Sair da videochamada já com meu plano montado e pronto para uso no aplicativo me economizou tempo. Em 3 semanas senti um alívio enorme no inchaço e meu intestino voltou a funcionar perfeitamente.”
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-sand/60 flex items-center justify-between text-xs">
+              <span class="font-serif text-base font-semibold text-charcoal">Beatriz M.</span>
+              <span class="text-muted font-medium bg-sand/50 px-2.5 py-1 rounded-full">Plano Florescer</span>
+            </div>
+          </div>
+
+          <!-- Depoimento 3 -->
+          <div class="bg-white/90 hover:bg-white p-8 rounded-3xl border border-sand/90 shadow-sm hover:shadow-organic transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <!-- 5 Estrelas em Tom Terracotta -->
+              <div class="flex items-center gap-1 text-terracotta mb-6" aria-label="Avaliação 5 estrelas">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+
+              <!-- Texto do Depoimento -->
+              <p class="text-charcoal/90 text-sm sm:text-base leading-relaxed italic mb-6">
+                “O suporte via WhatsApp foi o diferencial absoluto para mim. Sempre que surgia um jantar ou evento, ela me dava opções sem me fazer sentir culpada. Consegui manter a constância e recuperei minha autoestima diante do espelho.”
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-sand/60 flex items-center justify-between text-xs">
+              <span class="font-serif text-base font-semibold text-charcoal">Larissa S.</span>
+              <span class="text-muted font-medium bg-sand/50 px-2.5 py-1 rounded-full">Plano Despertar</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Nota Ética do CFN -->
+        <p class="text-[11px] text-muted/80 text-center max-w-3xl mx-auto mt-12 leading-relaxed">
+          * Em conformidade com o Código de Ética do Conselho Federal de Nutricionistas (CFN), os relatos acima refletem a experiência individual e o bem-estar de cada paciente, sem promessas de resultados pré-determinados e sem exibição de imagens de antes e depois.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. SEÇÃO DE PERGUNTAS FREQUENTES (FAQ Accordion Interativo)
+         ======================================================================== -->
+    <section id="duvidas" class="bg-cream py-20 lg:py-28 relative overflow-hidden border-t border-sand/70">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="text-center mb-16 lg:mb-20">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/80 border border-sand text-sage-dark text-xs sm:text-sm font-medium uppercase tracking-wider mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+            <span>Tire Suas Dúvidas</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.18] tracking-tight mb-6">
+            Perguntas frequentes sobre o <span class="italic font-normal text-sage">atendimento online</span>
+          </h2>
+
+          <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Tudo o que você precisa saber para iniciar seu acompanhamento com total segurança e tranquilidade.
+          </p>
+        </div>
+
+        <!-- Accordion em HTML5 + Vanilla JS -->
+        <div class="space-y-4">
+          
+          <!-- Pergunta 1 -->
+          <div class="bg-white/80 hover:bg-white rounded-2xl border border-sand/90 transition-all duration-300 shadow-2xs">
+            <button 
+              type="button" 
+              class="accordion-toggle w-full px-6 sm:px-8 py-5 sm:py-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+              aria-expanded="false" 
+              aria-controls="faq-ans-1"
+            >
+              <span class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                Como funciona a avaliação física na consulta online?
+              </span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand/60 text-charcoal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </button>
+            <div id="faq-ans-1" class="accordion-content hidden px-6 sm:px-8 pb-6 text-sm sm:text-base text-muted leading-relaxed border-t border-sand/40 pt-4">
+              A avaliação física é realizada de forma prática, guiada e totalmente sigilosa. Na etapa de pré-consulta, você recebe um guia visual simples ensinando a aferir suas medidas corporais com fita métrica (como cintura, quadril e abdômen). Se desejar, orientamos o registro de fotos comparativas privadas para acompanhamento exclusivo da sua evolução. Além disso, avaliamos detalhadamente seus sintomas clínicos, nível de retenção hídrica e exames laboratoriais recentes.
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="bg-white/80 hover:bg-white rounded-2xl border border-sand/90 transition-all duration-300 shadow-2xs">
+            <button 
+              type="button" 
+              class="accordion-toggle w-full px-6 sm:px-8 py-5 sm:py-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+              aria-expanded="false" 
+              aria-controls="faq-ans-2"
+            >
+              <span class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                Vou precisar comprar alimentos caros ou suplementos?
+              </span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand/60 text-charcoal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </button>
+            <div id="faq-ans-2" class="accordion-content hidden px-6 sm:px-8 pb-6 text-sm sm:text-base text-muted leading-relaxed border-t border-sand/40 pt-4">
+              Não! A base do acompanhamento é comida de verdade, acessível e fácil de encontrar em qualquer supermercado ou feira livre (arroz, feijão, ovos, carnes, legumes, frutas e sementes). Não prescrevo ingredientes mirabolantes ou modismos que encarecem a rotina. Suplementos alimentares ou fitoterápicos só são recomendados quando há real necessidade clínica identificada em seus exames.
+            </div>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="bg-white/80 hover:bg-white rounded-2xl border border-sand/90 transition-all duration-300 shadow-2xs">
+            <button 
+              type="button" 
+              class="accordion-toggle w-full px-6 sm:px-8 py-5 sm:py-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+              aria-expanded="false" 
+              aria-controls="faq-ans-3"
+            >
+              <span class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                Em quanto tempo recebo meu plano alimentar?
+              </span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand/60 text-charcoal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </button>
+            <div id="faq-ans-3" class="accordion-content hidden px-6 sm:px-8 pb-6 text-sm sm:text-base text-muted leading-relaxed border-t border-sand/40 pt-4">
+              Você sai da própria consulta online com seu plano alimentar pronto! O planejamento é desenhado a quatro mãos durante a videochamada, alinhando suas preferências e rotina em tempo real. Logo após o encerramento da chamada, o PDF diagramado e o acesso ao aplicativo móvel já ficam disponíveis para você começar no mesmo dia.
+            </div>
+          </div>
+
+          <!-- Pergunta 4 -->
+          <div class="bg-white/80 hover:bg-white rounded-2xl border border-sand/90 transition-all duration-300 shadow-2xs">
+            <button 
+              type="button" 
+              class="accordion-toggle w-full px-6 sm:px-8 py-5 sm:py-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+              aria-expanded="false" 
+              aria-controls="faq-ans-4"
+            >
+              <span class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                Vocês aceitam convênio / plano de saúde?
+              </span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand/60 text-charcoal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </button>
+            <div id="faq-ans-4" class="accordion-content hidden px-6 sm:px-8 pb-6 text-sm sm:text-base text-muted leading-relaxed border-t border-sand/40 pt-4">
+              Os atendimentos são exclusivamente particulares para garantir consultas completas (de 60 a 90 minutos), sem a pressa típica dos convênios. No entanto, fornecemos recibo detalhado com todos os dados profissionais necessários para você solicitar o reembolso integral ou parcial junto à sua operadora de plano de saúde.
+            </div>
+          </div>
+
+          <!-- Pergunta 5 -->
+          <div class="bg-white/80 hover:bg-white rounded-2xl border border-sand/90 transition-all duration-300 shadow-2xs">
+            <button 
+              type="button" 
+              class="accordion-toggle w-full px-6 sm:px-8 py-5 sm:py-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+              aria-expanded="false" 
+              aria-controls="faq-ans-5"
+            >
+              <span class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                Qual a diferença entre os planos de 1, 3 e 6 meses?
+              </span>
+              <span class="accordion-icon w-8 h-8 rounded-full bg-sand/60 text-charcoal flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+            </button>
+            <div id="faq-ans-5" class="accordion-content hidden px-6 sm:px-8 pb-6 text-sm sm:text-base text-muted leading-relaxed border-t border-sand/40 pt-4">
+              O <strong>Plano Despertar (1 mês)</strong> é ideal para quem busca um diagnóstico inicial e organização rápida dos hábitos. O <strong>Plano Transformar (3 meses - mais escolhido)</strong> oferece o período ideal para consolidar a perda de gordura sem efeito sanfona, com canal contínuo no WhatsApp para tirar dúvidas. Já o <strong>Plano Florescer (6 meses)</strong> é voltado para uma reprogramação completa do estilo de vida, com múltiplas consultas, até 4 ajustes de cardápio e brindes exclusivos.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. BANNER CTA FINAL (Conversão & Decisão com Acolhimento)
+         ======================================================================== -->
+    <section class="bg-sand/50 border-t border-sand/70 py-16 lg:py-24 relative overflow-hidden text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream border border-sand text-terracotta text-xs sm:text-sm font-medium uppercase tracking-wider mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+          <span>Dê o Primeiro Passo</span>
+        </div>
+
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-[1.16] tracking-tight mb-6">
+          Pronta para começar sua transformação com <span class="italic font-normal text-sage">leveza</span>?
+        </h2>
+
+        <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          Você não precisa esperar a próxima segunda-feira para cuidar de você. Agende sua consulta online e construa uma rotina que cabe na sua vida real.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a 
+            href="#"
+            data-wa-trigger
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-sage hover:bg-sage-dark text-white font-semibold text-base sm:text-lg px-9 py-4 rounded-full transition-all duration-300 shadow-organic hover:shadow-organic-lg hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <!-- Ícone WhatsApp em SVG -->
+            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.741.963 1.199.662.589 1.22.771 1.393.858.173.086.274.072.375-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.044.073.044.42-.1 0.825zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.399C8.384 21.492 10.133 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+            <span>Quero agendar minha consulta agora</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="text-xs text-muted mt-4">
+          Atendimento 100% individualizado • Resposta rápida no WhatsApp
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       9. RODAPÉ COMPLETO & ELEGANTE
+       ======================================================================== -->
+  <footer class="bg-cream border-t border-sand/80 pt-16 pb-12 text-xs text-muted">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-sand">
+        
+        <!-- Coluna 1: Identidade & CRN -->
+        <div class="md:col-span-5 flex flex-col items-start">
+          <a href="#" class="group flex items-baseline gap-2 mb-3">
+            <span class="font-serif text-2xl font-semibold tracking-tight text-charcoal group-hover:text-sage transition-colors">
+              Mariana Leão
+            </span>
+            <span class="text-xs uppercase tracking-[0.2em] font-medium text-sage-dark">
+              | Nutrição
+            </span>
+          </a>
+          <p class="text-sm text-muted leading-relaxed max-w-sm mb-4">
+            Nutrição clínica, estética e comportamento alimentar com atendimento individualizado 100% online para todo o Brasil e exterior.
+          </p>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sand/60 text-charcoal font-semibold text-xs" data-config="crn">
+            CRN-X 00000
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação Rápida -->
+        <div class="md:col-span-3">
+          <h4 class="font-serif text-base font-semibold text-charcoal mb-4">Navegação</h4>
+          <ul class="space-y-2.5 text-sm" role="list">
+            <li><a href="#sobre" class="hover:text-charcoal transition-colors">Sobre a Nutricionista</a></li>
+            <li><a href="#como-funciona" class="hover:text-charcoal transition-colors">Como Funciona o Online</a></li>
+            <li><a href="#planos" class="hover:text-charcoal transition-colors">Planos de Acompanhamento</a></li>
+            <li><a href="#duvidas" class="hover:text-charcoal transition-colors">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Contato & Social -->
+        <div class="md:col-span-4 flex flex-col items-start md:items-end">
+          <h4 class="font-serif text-base font-semibold text-charcoal mb-4">Conecte-se</h4>
+          <div class="space-y-3 text-sm flex flex-col items-start md:items-end">
+            <a 
+              href="https://instagram.com/marianaleao.nutri" 
+              data-config="instagram" 
+              data-keep-text="false"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center gap-2 text-charcoal hover:text-sage transition-colors"
+            >
+              <svg class="w-4 h-4 text-terracotta" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>@marianaleao.nutri</span>
+            </a>
+            <a 
+              href="#" 
+              data-wa-trigger 
+              class="inline-flex items-center gap-2 text-sage hover:text-sage-dark font-medium transition-colors"
+            >
+              <span>Agendar Consulta no WhatsApp</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Faixa Inferior de Conformidade Legal & Direitos -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <p class="text-[11px] text-muted max-w-2xl leading-relaxed">
+          <strong>Aviso Legal:</strong> As informações contidas neste site possuem caráter educativo e não substituem a consulta individualizada com nutricionista ou médico. O atendimento obedece aos preceitos éticos e regulatórios do Conselho Federal de Nutricionistas (CFN).
+        </p>
+        <div class="flex flex-col sm:flex-row items-center gap-2 text-[11px] text-muted whitespace-nowrap">
+          <span>© 2026 Mariana Leão. Todos os direitos reservados.</span>
+          <span class="hidden sm:inline">•</span>
+          <span class="text-charcoal/80 font-medium">Desenvolvido por André Mencarelli</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       10. BOTÃO FLUTUANTE DISCRETO DO WHATSAPP
+       ======================================================================== -->
+  <aside class="fixed bottom-6 right-6 z-50">
+    <a 
+      href="#"
+      data-wa-trigger
+      class="floating-wa-btn group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-sage hover:bg-sage-dark text-white shadow-floating transition-all duration-300 hover:scale-105 active:scale-95"
+      aria-label="Falar com a nutricionista Mariana Leão no WhatsApp"
+    >
+      <!-- Ícone WhatsApp -->
+      <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.741.963 1.199.662.589 1.22.771 1.393.858.173.086.274.072.375-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.044.073.044.42-.1 0.825zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.957-1.399C8.384 21.492 10.133 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+      </svg>
+
+      <!-- Tooltip Sutil que aparece no Desktop -->
+      <span class="pointer-events-none absolute right-full mr-3.5 px-3 py-1.5 rounded-xl bg-charcoal text-white text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-md hidden sm:block">
+        Falar com a Nutri
+      </span>
+    </a>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
