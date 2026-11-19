@@ -3,9 +3,10 @@
    Custom Stylesheet (Complementar ao Tailwind CSS)
    ========================================================================== */
 
-/* Suavidade na rolagem */
+/* Suavidade na rolagem e compensação do header + aviso fixos */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--aviso-height, 33px) + 5rem);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

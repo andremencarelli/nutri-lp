@@ -181,8 +181,28 @@ function initAccordion() {
   });
 }
 
+/**
+ * Ajusta dinamicamente a posição do header sticky para ficar sempre
+ * perfeitamente alinhado abaixo do aviso de demonstração fixo
+ */
+function initAvisoSticky() {
+  const aviso = document.getElementById("Aviso");
+  const header = document.getElementById("site-header");
+  if (!aviso || !header) return;
+
+  const updatePosition = () => {
+    const h = aviso.offsetHeight;
+    document.documentElement.style.setProperty("--aviso-height", `${h}px`);
+    header.style.top = `${h}px`;
+  };
+
+  updatePosition();
+  window.addEventListener("resize", updatePosition);
+}
+
 // Inicialização após o DOM carregar
 document.addEventListener("DOMContentLoaded", () => {
+  initAvisoSticky();
   initWhatsAppButtons();
   populateConfigPlaceholders();
   initMobileMenu();
