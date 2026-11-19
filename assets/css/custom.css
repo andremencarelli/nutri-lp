@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Mariana Leão - Nutrição Clínica & Estética
+   Custom Stylesheet (Complementar ao Tailwind CSS)
+   ========================================================================== */
+
+/* Suavidade na rolagem */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Moldura orgânica da foto do Hero */
+.organic-frame {
+  border-radius: 2.5rem 5.5rem 2.5rem 4.5rem;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.organic-frame:hover {
+  transform: translateY(-4px);
+}
+
+/* Moldura orgânica alternativa (Seção Sobre) */
+.organic-frame-alt {
+  border-radius: 5.5rem 2.5rem 4.5rem 2.5rem;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.organic-frame-alt:hover {
+  transform: translateY(-4px);
+}
+
+/* Animação suave para o card flutuante */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: softFloat 4.5s ease-in-out infinite;
+}
+
+/* Efeito de vidro sutil (Glassmorphism orgânico) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Barra de rolagem sutil e discreta */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2D9CC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5C7263;
+}
+
+/* Transições suaves do Accordion */
+.accordion-content {
+  transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+}
+
+/* Efeito de pulso suave no botão flutuante do WhatsApp */
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(92, 114, 99, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(92, 114, 99, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(92, 114, 99, 0);
+  }
+}
+
+.floating-wa-btn {
+  animation: softPulse 3s infinite;
+}
